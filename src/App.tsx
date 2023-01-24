@@ -1,6 +1,6 @@
+import './index.scss';
 
-function App() {
-
+const App = () => {
 
   return (
     <h1>Hola mundo</h1>
