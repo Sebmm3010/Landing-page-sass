@@ -1,4 +1,5 @@
 import '../styles/navbar.scss';
+import { routes } from '../data/data';
 
 export const Navbar = () => {
   return (
@@ -7,9 +8,23 @@ export const Navbar = () => {
         <p>Logo</p>
       </div>
       <ul className='navbar__routes'>
-
+        {
+          routes.map(route => (
+            <li key={route.path} className='route'>
+              <a href={route.path}>{route.name}</a>
+            </li>
+          ))
+        }
       </ul>
-      <div className="navbar__buttons"></div>
+      <div className="container__buttons">
+        <button>
+          Iniciar
+        </button>
+
+        <button>
+          Registrarse
+        </button>
+      </div>
     </header>
   )
 }
