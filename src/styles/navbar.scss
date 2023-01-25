@@ -1,2 +1,33 @@
-@import './styles/variables';
-@import './styles/mixins';
+@import './variables';
+@import './mixins';
+
+.navbar {
+    @include flexBetween;
+    color: $prime-color;
+    height: 4.4rem;
+    padding: 0 $md;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: $transition;
+
+
+    .navbar__logo {
+        @include logo
+    }
+
+    .navbar__routes {
+        @include routes
+    }
+
+    .container__buttons {
+        @include flexAlign;
+        gap: $lg;
+
+        button {
+            @include button;
+            background-color: $secondary-color;
+        }
+    }
+}
