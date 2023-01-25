@@ -5,7 +5,7 @@ export const Navbar = () => {
   return (
     <header className='navbar'>
       <div className='navbar__logo'>
-        <p>Logo</p>
+        <a href='#'>Logo</a>
       </div>
       <ul className='navbar__routes'>
         {
@@ -16,7 +16,7 @@ export const Navbar = () => {
           ))
         }
       </ul>
-      <div className="container__buttons">
+      <div className="button__container">
         <button>
           Iniciar
         </button>
