@@ -8,7 +8,7 @@ export const routes: Route[] = [
     },
     {
         name: 'Como funciona?',
-        path: '#funciona'
+        path: '#funcion'
     },
     {
         name: 'Sobre nosotros',
