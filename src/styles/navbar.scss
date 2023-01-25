@@ -3,7 +3,7 @@
 
 .navbar {
     @include flexBetween;
-    color: $prime-color;
+    color: $secondary-color;
     height: 4.4rem;
     padding: 0 $md;
     position: fixed;
@@ -21,7 +21,7 @@
         @include routes
     }
 
-    .container__buttons {
+    .button__container {
         @include flexAlign;
         gap: $lg;
 
