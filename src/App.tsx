@@ -1,9 +1,12 @@
 import './index.scss';
+import { Navbar } from './components';
 
 const App = () => {
 
   return (
-    <h1>Hola mundo</h1>
+    <>
+      <Navbar/>
+    </>
   )
 }
 
