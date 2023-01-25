@@ -4,7 +4,7 @@ import { Route } from "../interfaces"
 export const routes: Route[] = [
     {
         name: 'Inicio',
-        path: '#'
+        path: '#home'
     },
     {
         name: 'Como funciona?',
