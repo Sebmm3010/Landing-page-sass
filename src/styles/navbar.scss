@@ -12,6 +12,12 @@
     width: 100%;
     transition: $transition;
 
+    &.active{
+        background-color: $secondary-color;
+        color: $prime-color;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 0 10px rgb(0, 0, 0, .2);
+    }
 
     .navbar__logo {
         @include logo
@@ -27,7 +33,7 @@
 
         button {
             @include button;
-            background-color: $secondary-color;
+            // background-color: $secondary-color;
         }
     }
 }
