@@ -1,0 +1,70 @@
+@import './variables';
+@import './mixins';
+
+
+.about {
+    background-color: $prime-color;
+    padding: $md $md 20% $md;
+    position: relative;
+
+    .feature__container {
+        @include flexAlign;
+        gap: $lg;
+
+        .image__container {
+            flex: 1;
+
+            img{
+                width: 80%;
+            }
+        }
+
+        .right__container {
+            flex: 1;
+            gap: $lg;
+            @include flexDirection;
+
+            .right__text {
+                gap: $lg;
+                @include flexDirection;
+
+                h1 {
+                    font-size: 4rem;
+                    color: $secondary-color;
+                }
+
+                p {
+                    font-size: $sm;
+                    color: $thrid-color;
+                }
+            }
+
+            .content__feature {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                .feature {
+                    @include flexRow;
+                    gap: $sm;
+
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 5px;
+                        color: $blue-color;
+                    }
+
+                    .text{
+                        p{
+                            color: $secondary-color;
+                            font-weight: bold;
+                        }
+                        span{
+                            color: $thrid-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
