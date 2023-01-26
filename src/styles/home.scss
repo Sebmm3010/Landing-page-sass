@@ -13,7 +13,6 @@
     .home__text {
 
         text-align: center;
-
         h1 {
             @include textGradient;
             font-size: $md;

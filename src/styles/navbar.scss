@@ -11,6 +11,7 @@
     left: 0;
     width: 100%;
     transition: $transition;
+    z-index: 2;
 
     &.active{
         background-color: $secondary-color;
