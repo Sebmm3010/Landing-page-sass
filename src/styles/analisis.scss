@@ -1,0 +1,65 @@
+@import './variables';
+@import './mixins';
+
+.analisis {
+    height: fit-content;
+    background-color: $secondary-color;
+    padding: 35% $md 10% $md;
+
+    .data__container {
+        @include flexAlign;
+
+        .left__data {
+            @include flexDirection;
+            gap: $lg;
+            flex: 1;
+
+            h1 {
+                font-size: 4rem;
+                color: $prime-color;
+                font-weight: bold;
+            }
+
+            p {
+                color: $thrid-color;
+            }
+        }
+
+        .analisis__container {
+            @include flexAlign;
+            gap: $lg;
+            .data__container{
+                @include flexAlign;
+                flex-direction: column;
+                gap:$lg;
+                cursor: pointer;
+                color: $prime-color;
+                font-weight: bold;
+                p{
+                    color:$prime-color
+                }
+                .data__icon{
+                    @include flexCenter;
+                    height: 180px;
+                    width: 180px;
+                    border-radius: 20px;
+                    font-size: $lg;
+                    transition: $transition;
+                    box-shadow: $shadow2;
+                    background: $neutral;
+                    
+                    &:hover{
+                        background: $secondary-color;
+                        @include textGradient;
+                    }
+                }
+            }
+        }
+        .right__data{
+            @include flexCenter;
+            flex:1;
+            // display: flex;
+            // justify-content: flex-end;
+        }
+    }
+}
