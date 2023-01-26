@@ -1,9 +1,22 @@
+import { useState } from 'react';
+import { routes } from '../data';
 import '../styles/navbar.scss';
-import { routes } from '../data/data';
 
 export const Navbar = () => {
+
+  const [navColor, setNavColor] = useState(false);
+
+  const navBarColorSwitch=()=>{
+
+    (window.scrollY >= 70)
+      ? setNavColor(true)
+      : setNavColor(false)
+  }
+
+  window.addEventListener('scroll', navBarColorSwitch);
+
   return (
-    <header className='navbar'>
+    <header className={navColor ? 'navbar active' : 'navbar'}>
       <div className='navbar__logo'>
         <a href='#'>Logo</a>
       </div>
@@ -17,11 +30,21 @@ export const Navbar = () => {
         }
       </ul>
       <div className="button__container">
-        <button>
+        <button
+          style={{
+            color: navColor ? '#fff': '#190c27',
+            backgroundColor: navColor? '#190c27': '#fff'
+          }}
+        >
           Iniciar
         </button>
 
-        <button>
+        <button
+          style={{
+            color: navColor ? '#fff': '#190c27',
+            backgroundColor: navColor? '#190c27': '#fff'
+          }}
+        >
           Registrarse
         </button>
       </div>
