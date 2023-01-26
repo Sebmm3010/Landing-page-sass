@@ -1,4 +1,4 @@
-import { Route } from "../interfaces"
+import { Route, Analisis } from "../interfaces"
 
 
 export const routes: Route[] = [
@@ -19,3 +19,18 @@ export const routes: Route[] = [
         path: '#contact'
     }
 ];
+
+export const analisis:Analisis[]=[
+    {
+        name: "Usuarios",
+        data: "12M",
+    },
+    {
+        name: "Lenguaje",
+        data: "16",
+    },
+    {
+        name: "Soporte y antecion",
+        data: "24/7",
+    }
+]
