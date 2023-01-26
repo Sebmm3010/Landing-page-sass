@@ -1,6 +1,6 @@
 import './index.scss';
 import { Navbar } from './components';
-import { Analisis, Home } from './sections';
+import { Analisis, About, Home } from './sections';
 
 const App = () => {
 
@@ -9,6 +9,7 @@ const App = () => {
       <Navbar/>
       <Home/>
       <Analisis/>
+      <About/>
     </>
   )
 }
