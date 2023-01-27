@@ -1,5 +1,6 @@
-import { BsFillPatchCheckFill } from 'react-icons/bs'
+import { BsFillPatchCheckFill } from 'react-icons/Bs';
 import { feature } from '../assets';
+import { Control } from '../components';
 import '../styles/about.scss';
 
 export const About = () => {
@@ -18,14 +19,14 @@ export const About = () => {
                     <div className="content__feature">
                         {
                             feauters.map(value => (
-                                <div className="feature" key={value}> 
-                                    <BsFillPatchCheckFill/>
+                                <div className="feature" key={value}>
+                                    <BsFillPatchCheckFill />
                                     <div className="text">
                                         <p>
                                             Enim do dolore consequat sunt dolore
                                         </p>
                                         <span>
-                                            Consectetur proident nulla nostrud veniam cillum elit. 
+                                            Consectetur proident nulla nostrud veniam cillum elit.
                                         </span>
                                     </div>
                                 </div>
@@ -34,6 +35,7 @@ export const About = () => {
                     </div>
                 </div>
             </div>
+            <Control />
         </section>
     )
 }

@@ -5,9 +5,9 @@ import '../styles/analisis.scss'
 export const Analisis = () => {
     return (
         <section  className='analisis'>
-            <div className="data__container">
+            <div className="data__container" id='funcion'>
                 <div className="left__data">
-                    <div className='text_container' id='funcion'>
+                    <div className='text_container' >
                         <h1>Como funciona?, dejanos mostrarte.</h1>
                         <p>
                             Commodo dolore irure consectetur fugiat exercitation. Elit aliqua ipsum laboris ad ea. Cillum officia pariatur exercitation amet ad deserunt duis. Occaecat duis nisi commodo et ea occaecat id.
