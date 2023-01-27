@@ -5,7 +5,7 @@
 .home {
     height: 130vh;
     background-color: $prime-color;
-    padding: $ex-l $md;
+    padding: $ex-lg $md;
 
     @include flexDirection;
     gap: 3rem;
