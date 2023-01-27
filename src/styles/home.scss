@@ -3,7 +3,7 @@
 
 
 .home {
-    height: 130vh;
+    height: 100vh;
     background-color: $prime-color;
     padding: $ex-lg $md;
 
@@ -12,6 +12,7 @@
 
     .home__text {
 
+        margin-top: $lg;
         text-align: center;
         h1 {
             @include textGradient;
