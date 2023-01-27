@@ -4,7 +4,7 @@ import '../styles/analisis.scss'
 
 export const Analisis = () => {
     return (
-        <section  className='analisis'>
+        <section className='analisis'>
             <div className="data__container" id='funcion'>
                 <div className="left__data">
                     <div className='text_container' >
@@ -26,7 +26,7 @@ export const Analisis = () => {
                     </div>
                 </div>
                 <div className="right__data">
-                    <img src={onephone} alt="phone" />
+                    <img src={onephone} alt="phone" loading='lazy' />
                 </div>
             </div>
         </section>

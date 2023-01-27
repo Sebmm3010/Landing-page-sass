@@ -9,7 +9,7 @@ export const About = () => {
         <section id="about" className='about'>
             <div className="feature__container">
                 <div className="image__container">
-                    <img src={feature} alt="feature" />
+                    <img src={feature} alt="feature" loading='lazy' />
                 </div>
                 <div className="right__container">
                     <div className="right__text">
