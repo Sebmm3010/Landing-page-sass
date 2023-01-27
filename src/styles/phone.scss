@@ -1,0 +1,60 @@
+@import './mixins';
+@import './variables';
+
+.application__app{
+    padding: 40% $md 10% $md;
+    .app__container{
+        @include flexAlign;
+
+        .left__distribution{
+            flex: 1;
+            @include flexDirection;
+            gap: $lg;
+            
+            .text__container{
+                @include flexDirection;
+                gap: $lg;
+
+                h1{
+                    font-size: 4rem;
+                    color: $prime-color;
+                }
+
+                p{
+                    font-size: $sm;
+                    color: $thrid-color;
+                }
+            }
+
+            .app__buttons{
+                @include flexAlign;
+                gap: $lg;
+
+                button{
+                    @include button;
+                    background-color: $prime-color;
+                    color: $secondary-color;
+                    gap: $sm;
+                    transition: $transition;
+                    &:hover{
+                        scale: 1.1;
+                    }
+                    &:active{
+                        scale: .9;
+                    }
+                    @include flexAlign;
+                    svg{
+                        scale: 2;
+                    }
+                }
+            }
+        }
+
+        .right__distribution{
+            flex: 1;
+            @include flexAlign;
+            justify-content: flex-end;
+            
+        }
+    }
+}
