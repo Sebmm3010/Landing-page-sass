@@ -1,6 +1,6 @@
 import './index.scss';
 import { Navbar } from './components';
-import { Analisis, About, Home } from './sections';
+import { Analisis, About, Home, PhoneApp } from './sections';
 
 const App = () => {
 
@@ -10,6 +10,7 @@ const App = () => {
       <Home/>
       <Analisis/>
       <About/>
+      <PhoneApp/>
     </>
   )
 }
