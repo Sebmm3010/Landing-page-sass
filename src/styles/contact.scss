@@ -1,0 +1,83 @@
+@import './mixins';
+@import './variables';
+
+
+.contact {
+    padding: $md;
+    background-color: $prime-color;
+    color: $secondary-color;
+
+
+    .contact__container {
+        @include flexDirection;
+        gap: $lg;
+
+
+        .contact__top {
+            @include flexBetween;
+            padding-bottom: $lg;
+            border-bottom: $border;
+
+            .logo__container {
+                @include logo;
+            }
+
+            .contact__form {
+                @include flexAlign;
+                gap: $lg;
+
+                button {
+                    @include button;
+                    color: $prime-color;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    .contact__mid {
+        @include flexBetween;
+
+        .left__content {
+            @include flexDirection;
+            gap: $lg;
+
+            .input__container {
+                border: $border;
+                padding: .2rem;
+                border-radius: 25px;
+
+
+                input {
+                    @include input;
+                }
+
+                button {
+                    @include button;
+
+                    background-color: $blue-color;
+                    color: $secondary-color;
+                }
+            }
+
+        }
+
+        .right__content {
+            .routes__list {
+                @include routes;
+
+                .route {
+                    @include textGradient;
+                }
+            }
+        }
+    }
+
+    .contact__bottom {
+        @include flexBetween;
+
+        ul {
+            @include routes;
+        }
+    }
+}
