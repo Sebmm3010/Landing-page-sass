@@ -1,12 +1,66 @@
 import { onephone } from '../assets';
 import { analisis } from '../data';
 import '../styles/analisis.scss'
+import { useFramerMotion } from '../hooks/useFramerMotion';
+import { useRef, useEffect } from 'react';
 
 export const Analisis = () => {
+    const ref = useRef(null);
+    const { m, inView, control, controlFunction } = useFramerMotion(ref);
+
+    const list = {
+        visible: {
+            opacity: 1,
+        },
+        hidden: {
+            opacity: 0,
+        },
+    };
+    const item1 = {
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: "spring",
+                stifness: 300,
+                damping: 24,
+                delay: 0.5,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            x: -100,
+        },
+    };
+    const item2 = {
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: "spring",
+                stifness: 300,
+                damping: 24,
+                delay: 0.5,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            x: 100,
+        },
+    };
+
+    useEffect(() => controlFunction('visible', 'hidden'), [control, inView]);
+
     return (
         <section className='analisis'>
-            <div className="data__container" id='funcion'>
-                <div className="left__data">
+            <m.div
+                ref={ref}
+                animate={control}
+                variants={list}
+                className="data__container" id='funcion'>
+                <m.div
+                variants={item1}
+                    className="left__data">
                     <div className='text_container' >
                         <h1>Como funciona?, dejanos mostrarte.</h1>
                         <p>
@@ -24,11 +78,11 @@ export const Analisis = () => {
                             ))
                         }
                     </div>
-                </div>
-                <div className="right__data">
+                </m.div>
+                <m.div variants={item2} className="right__data">
                     <img src={onephone} alt="phone" loading='lazy' />
-                </div>
-            </div>
+                </m.div>
+            </m.div>
         </section>
     )
 }
