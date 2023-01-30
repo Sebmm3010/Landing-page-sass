@@ -1,18 +1,12 @@
 import { useEffect, useRef } from "react";
-import { motion as m, useAnimationControls, useInView } from 'framer-motion';
 import { Dashboard } from '../components';
 import '../styles/home.scss';
+import { list } from "../data";
+import { useFramerMotion } from '../hooks/useFramerMotion';
 
 export const Home = () => {
 
-  const control = useAnimationControls();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-
-  const list = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-  }
+  const { ref, m, control, controlFunction, inView }=useFramerMotion();
 
   const item = {
     visible: {
@@ -25,11 +19,7 @@ export const Home = () => {
     },
   };
 
-  useEffect(() => {
-    inView
-      ? control.start('visible')
-      : control.start('hidden')
-  }, [control, inView]);
+  useEffect(() => controlFunction('visible', 'hidden'), [control, inView]);
 
   return (
     <section id="home" className="home">

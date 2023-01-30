@@ -1,53 +1,12 @@
 import { onephone } from '../assets';
-import { analisis } from '../data';
+import { analisis, item1, item2, list } from '../data';
 import '../styles/analisis.scss'
 import { useFramerMotion } from '../hooks/useFramerMotion';
 import { useRef, useEffect } from 'react';
 
 export const Analisis = () => {
-    const ref = useRef(null);
-    const { m, inView, control, controlFunction } = useFramerMotion(ref);
-
-    const list = {
-        visible: {
-            opacity: 1,
-        },
-        hidden: {
-            opacity: 0,
-        },
-    };
-    const item1 = {
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                type: "spring",
-                stifness: 300,
-                damping: 24,
-                delay: 0.5,
-            },
-        },
-        hidden: {
-            opacity: 0,
-            x: -100,
-        },
-    };
-    const item2 = {
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                type: "spring",
-                stifness: 300,
-                damping: 24,
-                delay: 0.5,
-            },
-        },
-        hidden: {
-            opacity: 0,
-            x: 100,
-        },
-    };
+    // const ref = useRef(null);
+    const { m, inView, control, controlFunction, ref } = useFramerMotion();
 
     useEffect(() => controlFunction('visible', 'hidden'), [control, inView]);
 
