@@ -1,15 +1,19 @@
 import { useInView, useAnimationControls, motion as m } from 'framer-motion';
+import { useRef } from 'react';
 
+type variant = 'visible' | 'hidden';
 
+export const useFramerMotion = () => {
 
-export const useFramerMotion = (ref: React.MutableRefObject<null>) => {
+    const ref=useRef(null);
 
     const inView = useInView(ref);
     const control = useAnimationControls();
-    const controlFunction = (varian1: string, variant2: string) => {
+    const controlFunction = (varian1: variant, variant2: variant, justOnes?:boolean) => {
         if (inView) {
             control.start(varian1);
         } else {
+            if (justOnes) return;
             control.start(variant2);
         }
     }
@@ -18,6 +22,7 @@ export const useFramerMotion = (ref: React.MutableRefObject<null>) => {
         inView,
         control,
         m,
+        ref,
         //* Metodos
         controlFunction
     }
