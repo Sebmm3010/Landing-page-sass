@@ -1,31 +1,14 @@
+import { useEffect } from 'react';
+import { useFramerMotion } from '../hooks/useFramerMotion';
+import { variants } from '../data';
 import { dashboard } from '../assets';
 import '../styles/dashboard.scss';
-import { useFramerMotion } from '../hooks/useFramerMotion';
-import { useRef, useEffect } from 'react';
 
 export const Dashboard = () => {
 
-  const ref = useRef(null);
-  const { inView, control, m, controlFunction } = useFramerMotion(ref);
+  const { inView, control, m, controlFunction, ref } = useFramerMotion();
 
-  const variants = {
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-
-    hidden: {
-      opacity: 0,
-      scale: 0,
-    },
-  };
-
-  useEffect(() => {
-    inView && control.start('visible')
-  }, [control, inView]);
+  useEffect(() => controlFunction('visible', 'hidden', true), [control, inView]);
 
 
   return (
