@@ -1,13 +1,27 @@
+import { useEffect } from 'react';
 import { FaApple } from "react-icons/fa";
 import { DiAndroid } from "react-icons/di";
 import { twophones } from "../assets";
+import { useFramerMotion } from '../hooks/useFramerMotion';
+import { item1, item2, list } from "../data";
 import '../styles/phone.scss';
 
 export const PhoneApp = () => {
+
+    const { m, inView, control, controlFunction, ref } = useFramerMotion();
+    useEffect(() => controlFunction('visible', 'hidden'), [control, inView]);
+
+
     return (
         <section id="app" className='application__app'>
-            <div className="app__container">
-                <div className="left__distribution">
+            <m.div
+                ref={ref}
+                animate={control}
+                variants={list}
+                className="app__container">
+                <m.div
+                    variants={item1}
+                    className="left__distribution">
                     <div className="text__container">
                         <h1>Ya puedes descargar nuestra App!</h1>
                         <p>
@@ -18,11 +32,13 @@ export const PhoneApp = () => {
                         <button><DiAndroid /> Descargar</button>
                         <button><FaApple /> Descargar</button>
                     </div>
-                </div>
-                <div className="right__distribution">
+                </m.div>
+                <m.div
+                    variants={item2}
+                    className="right__distribution">
                     <img src={twophones} alt="twophones" loading="lazy" />
-                </div>
-            </div>
+                </m.div>
+            </m.div>
         </section>
     )
 }
