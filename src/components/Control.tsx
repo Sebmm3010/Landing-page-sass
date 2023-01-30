@@ -1,9 +1,23 @@
-import { controlData } from '../data';
+import { useRef, useEffect } from 'react';
+import { controlData, variants } from '../data';
 import '../styles/control.scss';
+import { useFramerMotion } from '../hooks/useFramerMotion';
 
 export const Control = () => {
+
+    // const ref = useRef(null);
+    const { inView, m, controlFunction, control,ref }= useFramerMotion();
+
+    useEffect(() => controlFunction('visible', 'hidden', true), [control, inView]);
+
+
     return (
-        <div className='control'>
+        <m.div 
+            ref={ref}
+            initial='hidden'
+            variants={variants}
+            animate={control}
+        className='control'>
             <div className="control__container">
                 <div className="text__container">
                     <h1>Control de datos</h1>
@@ -33,6 +47,6 @@ export const Control = () => {
                     }
                 </div>
             </div>
-        </div>
+        </m.div>
     )
 }
